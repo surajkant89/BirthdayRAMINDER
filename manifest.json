@@ -1,0 +1,21 @@
+{
+    "name": "Birthday Reminder",
+    "short_name": "BdayReminder",
+    "description": "Never forget important birthdays",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3498db",
+    "icons": [
+      {
+        "src": "/icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }

@@ -1,0 +1,218 @@
+:root {
+    --primary-color: #34dbbf;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --info-color: #1abc9c;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+    --card-bg: #fff;
+    --border-color: #ddd;
+}
+
+[data-theme="dark"] {
+    --primary-color: #5495c1;
+    --secondary-color: #c06127;
+    --success-color: #27ae60;
+    --info-color: #16a085;
+    --warning-color: #d35400;
+    --danger-color: #c0392b;
+    --light-color: #bdc3c7;
+    --dark-color: #2c3e50;
+    --text-color: #000000;
+    --bg-color: #2c3e50;
+    --card-bg: #1cdfd2e9;
+    --border-color: #4a6278;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.birthday-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    min-height: 180px;
+}
+
+.birthday-card .card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.birthday-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.birthday-card.male::before {
+    background-color: #3498db;
+}
+
+.birthday-card.female::before {
+    background-color: #e91e63;
+}
+
+.birthday-card.transgender::before {
+    background-color: #9b59b6;
+}
+
+.birthday-card.other::before {
+    background-color: #2ecc71;
+}
+
+.birthday-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.birthday-actions .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.days-remaining {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    z-index: 2;
+}
+
+.calendar {
+    width: 100%;
+}
+
+.calendar th, .calendar td {
+    text-align: center;
+    padding: 10px;
+}
+
+.calendar th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.calendar td {
+    border: 1px solid var(--border-color);
+    height: 40px;
+    vertical-align: middle;
+}
+
+.calendar td:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.calendar .today {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.calendar .birthday {
+    position: relative;
+}
+
+.calendar .birthday::after {
+    content: '❤️';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .calendar th, .calendar td {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+    
+    .birthday-card {
+        margin-bottom: 10px;
+    }
+    
+    .profile-info-card .row > div {
+        margin-bottom: 10px;
+    }
+}
+
+/* Install Button Styles */
+#installButton {
+    width: 100%;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Hide install button when app is installed */
+  .installed #installButton {
+    display: none !important;
+  }
